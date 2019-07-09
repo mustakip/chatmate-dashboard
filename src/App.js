@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Router} from "react-router";
-import RouterProvider from "./components/RouterProvider";
+import RouterProvider from "./app/components/RouterProvider";
 import RouteProvider from "./app/router/routeProvider";
 
 class App extends React.Component {

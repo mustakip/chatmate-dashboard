@@ -15,12 +15,12 @@ class Dashboard extends React.Component {
         pathname: "/login"
       }
     )
-  }
+  };
 
 
   render() {
     return (
-      <div onClick={this._sendOnLoginPage}>
+      <div className='message' onClick={this._sendOnLoginPage}>
         Hello
       </div>
     )
