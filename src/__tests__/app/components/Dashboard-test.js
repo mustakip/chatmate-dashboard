@@ -7,7 +7,7 @@ describe("Dashboard",() => {
   it('should render Dashboard component', function () {
     const component = shallow(<Dashboard />);
 
-    expect(component.props().children).toEqual("Hello");
+    expect(component.find('.login-button').props().children).toEqual('Login');
     expect(component.length).toEqual(1);
   });
 });

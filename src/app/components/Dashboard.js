@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from "prop-types";
+import '../style/Dashboard.css';
 
 
 class Dashboard extends React.Component {
@@ -20,8 +21,8 @@ class Dashboard extends React.Component {
 
   render() {
     return (
-      <div className='message' onClick={this._sendOnLoginPage}>
-        Hello
+      <div className='login-form' onClick={this._sendOnLoginPage}>
+        <button className='login-button'>Login</button>
       </div>
     )
   }
