@@ -20,7 +20,6 @@ class Login extends React.Component {
       fetch('/login?username=' + username);
       path.pathname = '/chats';
     }
-    console.log(this.context);
     this.context.router.push(
       {
         ...path,
@@ -44,7 +43,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className='login-form'>
-        <input onChange={this._updateUsername} type='text' className='username-input-box' id='username-input'>Enter Username</input>
+        <input onChange={this._updateUsername} type='text' className='username-input-box' id='username-input'></input>
         <button onClick={this._sendOnLoginPage} className='login-button'>Login</button>
       </div>
     )

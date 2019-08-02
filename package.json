@@ -10,8 +10,7 @@
     "react-router": "^3.2.1",
     "react-scripts": "3.0.1",
     "redux": "^4.0.4",
-    "redux-loop": "^5.0.0",
-    "webpack-dev-server": "^3.1.5"
+    "redux-loop": "^5.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
