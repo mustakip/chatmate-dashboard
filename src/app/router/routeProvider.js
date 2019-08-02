@@ -1,13 +1,13 @@
 import {hashHistory, Route, Router} from "react-router";
 import React from "react";
-import Dashboard from "../components/Dashboard";
-import LoginForm from "../components/LoginForm";
+import Dashboard from "../components/Login";
+import ChatList from '../components/Dashboard';
 
 
 const routes = (
   <>
     <Route path="/" component={Dashboard}/>
-    <Route path="/login" component={LoginForm}/>
+    <Route path="/chats" component={ChatList}/>
   </>
 );
 
