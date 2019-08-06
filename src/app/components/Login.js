@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import '../style/Dashboard.css';
 import {connect} from 'react-redux'
 import updateUsername from '../actions/userDetailsActions';
+import axios from 'axios';
 
 
 class Login extends React.Component {
@@ -17,7 +18,7 @@ class Login extends React.Component {
     let path = {pathname: ''};
     if (username) {
       this.props.updateUsername(username);
-      fetch('/login?username=' + username);
+      axios.get('/login', {params: {username}});
       path.pathname = '/chats';
     }
     this.context.router.push(
