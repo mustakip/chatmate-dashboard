@@ -1,12 +1,12 @@
 import {hashHistory, Route, Router} from "react-router";
 import React from "react";
-import Dashboard from "../components/Login";
 import ChatList from '../components/Dashboard';
+import HomePage from "../HomePage/HomePage";
 
 
 const routes = (
   <>
-    <Route path="/" component={Dashboard}/>
+    <Route path="/" component={HomePage}/>
     <Route path="/chats" component={ChatList}/>
   </>
 );

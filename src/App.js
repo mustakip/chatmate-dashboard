@@ -8,12 +8,12 @@ import RouteProvider from "./app/router/routeProvider";
 class App extends React.Component {
   render() {
     return (
-      <div>
+      <>
         <Header/>
         <RouterProvider>
           <Router routes={RouteProvider.routes} history={RouteProvider.history}/>
         </RouterProvider>
-      </div>
+      </>
     );
   }
 }
