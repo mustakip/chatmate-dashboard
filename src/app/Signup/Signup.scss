@@ -1,0 +1,49 @@
+.signup-page {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+
+  .message-box {
+    width: 15em;
+    text-align: center;
+  }
+
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 20em;
+    width: 20em;
+
+    background-color: #DAE0E2;
+    border-radius: 1em;
+
+    .input {
+      width: 20em;
+      height: 2em;
+      text-align: center;
+      margin: 2em 0;
+      border: none;
+      border-bottom: 1px solid black;
+      outline: none;
+      background-color: #DAE0E2;
+    }
+
+    .signup-button {
+      width: 15em;
+      height: 3em;
+
+      background-color: #333945;
+      color: white;
+      font-size: large;
+      font-family: Arial;
+      border-radius: 2em;
+    }
+  }
+}

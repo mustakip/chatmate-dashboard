@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  flex-direction: row;
+  background-color: #DAE0E2;
+  height: 4em;
+  width: 100%;
+
+
+  .title {
+    margin: 0 0.5em;
+    color: #333945;
+    align-self: center;
+  }
+}
