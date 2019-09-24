@@ -40,5 +40,5 @@
     "enzyme-adapter-react-16": "^1.14.0",
     "jest": "24.7.1"
   },
-  "proxy": "http://localhost:8081"
+  "proxy": "https://chatmate-chats.herokuapp.com"
 }
