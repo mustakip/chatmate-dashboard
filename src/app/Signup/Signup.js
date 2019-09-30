@@ -11,6 +11,10 @@ const initialState = {
   message: ""
 };
 
+const isNotEmpty = (name) => {
+  return name && name !== "";
+};
+
 class Signup extends React.Component {
   componentWillMount() {
     this.setState(initialState);
@@ -23,6 +27,10 @@ class Signup extends React.Component {
 
   _signup = () => {
     const {signupForm} = this.state;
+    if (!this._isValidForm(signupForm)) {
+      this.setState({...this.state, message: "Invalid Input. Plz try again"})
+      return;
+    }
     axios.post("/signup", signupForm)
       .then(({data}) => {
         if (!data.signupSuccessful) {
@@ -48,6 +56,10 @@ class Signup extends React.Component {
         {this.state.message}
       </div>
     </div>);
+  }
+
+  _isValidForm({name, username, password}) {
+    return isNotEmpty(name) && isNotEmpty(username) && isNotEmpty(password)
   }
 }
 
