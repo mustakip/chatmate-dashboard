@@ -1,6 +1,7 @@
 import React from 'react';
 import './Signup.scss';
 import axios from 'axios'
+import PropTypes from "prop-types";
 
 const initialState = {
   signupForm: {
@@ -16,8 +17,17 @@ const isNotEmpty = (name) => {
 };
 
 class Signup extends React.Component {
+
+  static contextTypes = {
+    router: PropTypes.object,
+  };
+
   componentWillMount() {
     this.setState(initialState);
+  }
+
+  _sendToLoginPage() {
+    this.context.router.push({pathname: "/login"})
   }
 
   _updateSignupData = (event) => {
@@ -38,6 +48,7 @@ class Signup extends React.Component {
           return;
         }
         this.setState({...this.state, message: "Signup successful..."})
+        this._sendToLoginPage();
       })
 
   };
@@ -57,7 +68,6 @@ class Signup extends React.Component {
       </div>
     </div>);
   }
-
   _isValidForm({name, username, password}) {
     return isNotEmpty(name) && isNotEmpty(username) && isNotEmpty(password)
   }
