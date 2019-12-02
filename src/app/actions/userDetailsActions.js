@@ -1,8 +1,8 @@
 import actionTypes from '../actionTypes'
 
-const updateUsername = (username) => ({
-  type: actionTypes.updateUsername,
-  payload: {username}
-})
+const sendMessage = (message) => ({
+  type: actionTypes.SEND_MESSAGE,
+  payload: {message}
+});
 
-export default updateUsername;
+export default sendMessage;

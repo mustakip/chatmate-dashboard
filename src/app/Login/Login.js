@@ -1,6 +1,7 @@
 import React from 'react';
 import './Login.scss';
 import axios from 'axios'
+import PropTypes from "prop-types";
 
 const initialState = {
   loginForm: {
@@ -15,6 +16,11 @@ const isNotEmpty = (name) => {
 };
 
 class Login extends React.Component {
+
+  static contextTypes = {
+    router: PropTypes.object,
+  };
+
   componentWillMount() {
     this.setState(initialState);
   }
@@ -24,6 +30,11 @@ class Login extends React.Component {
     this.state.loginForm[key] = event.target.value;
   };
 
+
+    _sendToDashboard() {
+    this.context.router.push({pathname: "/dashboard"})
+  }
+
   _login = () => {
     const {loginForm} = this.state;
     if (!this._isValidForm(loginForm)) {
@@ -32,11 +43,12 @@ class Login extends React.Component {
     }
     axios.post("/login", loginForm)
       .then(({data}) => {
-        if (!data.loginSucessful) {
+        if (!data.loginSuccessful) {
           this.setState({...this.state, message: data.error});
           return;
         }
         this.setState({...this.state, message: "Login successful..."})
+        this._sendToDashboard();
       })
 
   };

@@ -1,6 +1,6 @@
 import React from 'react';
 import {mount, shallow} from "enzyme";
-import Dashboard from '../../../app/components/Dashboard';
+import Dashboard from '../../../app/Dashboard/Dashboard';
 import {createStore} from "redux";
 
 describe('Dashboard', function () {
@@ -14,7 +14,7 @@ describe('Dashboard', function () {
   });
 
   it('should render Dashboard', function () {
-    const component = mount(<Dashboard store={store} username="username"/>)
+    const component = mount(<Dashboard store={store} username="username"/>);
     expect(component.props().username).toEqual('username');
   });
 });
