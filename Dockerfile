@@ -1,4 +1,4 @@
-qFROM node:alpine
+FROM node:alpine
 
 WORKDIR /app
 ADD . /app
