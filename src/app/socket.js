@@ -1,5 +1,12 @@
-import openSocket from 'socket.io-client'
+import openSocket from "socket.io-client";
 
-const socket = openSocket("http://localhost:8081");
+let socket;
 
-export default socket;
+const openConnection = function() {
+  const port = "8500";
+  socket = openSocket(`http://localhost:${port}`);
+  console.log(`Connection to ${port} has been established`);
+};
+
+export default openConnection;
+export { socket };

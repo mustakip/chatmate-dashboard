@@ -1,0 +1,26 @@
+.friend-list-container {
+  height: 100%;
+  width: 20%;
+  padding: 0 0.1em;
+
+  background-color: #a4b3b8;
+
+  .friend-list {
+    background-color: white;
+
+    .friend {
+      text-align: center;
+      border: 1px solid grey;
+      font-size: 1.5em;
+    }
+    .friend:hover {
+      cursor: default;
+      font-size: 1.6em;
+      background-color: #e5e4e2;
+    }
+  }
+
+  .friends-heading {
+    text-align: center;
+  }
+}

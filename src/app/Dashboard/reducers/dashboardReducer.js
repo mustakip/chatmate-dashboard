@@ -1,6 +1,9 @@
-import actionTypes, {onSendMessageFailure, onSendMessageSucess} from '../../actionTypes';
-import {Cmd,loop} from 'redux-loop'
-import dataService from "../../dataService";
+import actionTypes, {
+  onSendMessageFailure,
+  onSendMessageSuccess
+} from "../actions/dashboardActionTypes";
+import { Cmd, loop } from "redux-loop";
+import { post } from "../../dataService";
 
 const initialState = {
   chatData: [],
@@ -10,19 +13,24 @@ const initialState = {
 export default (state = initialState, action) => {
   switch (action.type) {
     case actionTypes.SEND_MESSAGE:
-      console.log("sending message", action.payload);
-      return loop({...state, sendMessageStatus: "LOADING"},Cmd.run(dataService.post,{
-        args:["/message",action.payload],
-        failActionCreator:onSendMessageFailure,
-        successActionCreator:onSendMessageSucess
-      }));
+      return loop(
+        { ...state, sendMessageStatus: "LOADING" },
+        Cmd.run(post, {
+          args: ["/message", action.payload],
+          failActionCreator: onSendMessageFailure,
+          successActionCreator: onSendMessageSuccess
+        })
+      );
 
-    case actionTypes.SEND_MESSAGE_SUCESS:
-      console.log("this is the payload in success => ",action.payload);
-      return {...state,chatData:action.payload,sendMessageStatus:"SUCESS"};
+    case actionTypes.SEND_MESSAGE_SUCCESS:
+      return {
+        ...state,
+        chatData: action.payload,
+        sendMessageStatus: "SUCCESS"
+      };
 
     case actionTypes.SEND_MESSAGE_ERROR:
-      return {...state,sendMessageStatus:"FAILED"};
+      return { ...state, sendMessageStatus: "FAILED" };
 
     default:
       return state;
